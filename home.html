@@ -45,7 +45,7 @@
             <a href="profile.html" class="text-xs font-bold text-emerald-600 hover:underline">Voir plus <i class="fa-solid fa-arrow-right ml-1"></i></a>
         </div>
 
-        <div id="loanSlider" class="flex flex-nowrap overflow-x-auto gap-4 px-6 pb-6 snap-x no-scrollbar">
+        <div id="loanSlider" class="flex flex-nowrap overflow-x-auto gap-4 px-6 pb-6 snap-x snap-mandatory no-scrollbar items-start">
             
             <div class="min-w-[85%] snap-center relative overflow-hidden bg-white rounded-[2rem] p-6 shadow-xl shadow-emerald-900/5 border border-emerald-50/50">
                 <div class="relative flex items-center gap-4 mb-4">
@@ -72,7 +72,11 @@
     </div>
 
     <style>
-        /* Pour cacher la barre de scroll tout en gardant la fonctionnalité */
+        /* Empêche le rebond bizarre sur iOS et cache la barre */
+        #loanSlider {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>

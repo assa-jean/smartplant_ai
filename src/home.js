@@ -21,7 +21,7 @@ async function displayUserLoans(uid) {
             
             // Création de la carte HTML pour chaque demande
             const card = `
-                <div class="min-w-[85%] snap-center relative overflow-hidden bg-white rounded-[2rem] p-6 shadow-xl shadow-emerald-900/5 border border-emerald-50/50">
+                <div class="min-w-[85vw] sm:min-w-[320px] snap-start relative overflow-hidden bg-white rounded-[2rem] p-6 shadow-xl shadow-emerald-900/5 border border-emerald-50/50 flex-shrink-0">
                     <div class="relative flex items-center gap-4 mb-4">
                         <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                             <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
