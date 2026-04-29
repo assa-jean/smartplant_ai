@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlant AI - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen pb-20">
+
+    <div class="p-6 flex justify-between items-center bg-white">
+        <h1 class="text-2xl font-bold text-emerald-900">Bonjour, <span id="userName" class="text-emerald-600">...</span>!</h1>
+        <button class="text-gray-400 text-xl"><i class="fa-regular fa-bell"></i></button>
+    </div>
+
+    <div class="p-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Mes Cultures à Scanner</h2>
+        <div class="grid grid-cols-3 gap-4 mb-6">
+            <button onclick="selectPlant('Maïs')" class="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-emerald-500 transition">
+                <span class="text-3xl">🌽</span>
+                <span class="text-xs mt-2 font-medium">Maïs</span>
+            </button>
+            <button onclick="selectPlant('Manioc')" class="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-emerald-500 transition">
+                <span class="text-3xl">🥔</span>
+                <span class="text-xs mt-2 font-medium">Manioc</span>
+            </button>
+            <button onclick="selectPlant('Banane')" class="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-emerald-500 transition">
+                <span class="text-3xl">🍌</span>
+                <span class="text-xs mt-2 font-medium">Banane</span>
+            </button>
+        </div>
+
+        <button id="btnScan" class="w-full bg-emerald-700 text-white py-4 rounded-2xl font-bold shadow-lg flex items-center justify-center gap-3">
+            <i class="fa-solid fa-camera"></i> Lancer le Diagnostic
+        </button>
+    </div>
+
+    <div class="p-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-4">Vos Demandes</h2>
+        <div id="requestContainer" class="bg-white p-5 rounded-3xl shadow-md border border-gray-100">
+            <div id="noRequest">
+                <p class="text-gray-500 text-sm mb-4">Pas de demande en cours. Besoin d'aide pour vos cultures ?</p>
+                <button id="btnLoan" class="w-full bg-emerald-100 text-emerald-800 py-3 rounded-xl font-bold">
+                    Besoin d'une denrée ou intrant ?
+                </button>
+            </div>
+            
+            <div id="activeRequest" class="hidden">
+                <p id="loanTitle" class="font-bold text-sm mb-2">Demande en cours...</p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                    <div id="progressBar" class="bg-emerald-600 h-2.5 rounded-full" style="width: 30%"></div>
+                </div>
+                <p id="loanStatus" class="text-xs text-gray-400 italic">Statut : En cours d'examen</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 w-full bg-white border-t flex justify-around p-4">
+        <button class="text-emerald-700 flex flex-col items-center"><i class="fa-solid fa-house"></i><span class="text-[10px]">Accueil</span></button>
+        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-leaf"></i><span class="text-[10px]">Diagnostic</span></button>
+        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-hand-holding-dollar"></i><span class="text-[10px]">Micro-Loan</span></button>
+        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></button>
+    </div>
+
+    <script type="module" src="src/home.js"></script>
+</body>
+</html>

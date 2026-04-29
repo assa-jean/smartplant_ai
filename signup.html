@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlant AI - Inscription</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            background-image: url('https://images.unsplash.com/photo-1530836361253-efad5d718465?q=80&w=2070'); 
+            background-size: cover; 
+            background-position: center;
+        }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="h-screen flex items-center justify-center p-4">
+
+    <div class="glass w-full max-w-md rounded-3xl p-8 shadow-2xl flex flex-col items-center">
+        <div class="mb-6 text-center">
+            <div class="text-emerald-600 mb-2 flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2Z"/><path d="M12 2v6"/><path d="m7 12 5-5 5 5"/><path d="m7 17 5-5 5 5"/></svg>
+            </div>
+            <h1 class="text-3xl font-bold text-emerald-900">SmartPlant <span class="text-emerald-600">AI</span></h1>
+            <p class="text-gray-600 mt-2 font-semibold">Créer votre compte agricole</p>
+        </div>
+
+        <div class="w-full space-y-4">
+            <input type="text" id="username" placeholder="Nom complet" class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+            
+            <input type="email" id="email" placeholder="Email" class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+            
+            <input type="password" id="password" placeholder="Mot de passe" class="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none transition">
+            
+            <button id="btnSignup" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 rounded-xl transition shadow-lg mt-2">
+                S'inscrire
+            </button>
+        </div>
+
+        <div class="mt-6 text-center">
+            <p class="text-gray-600">Déjà un compte ? 
+                <a href="index.html" class="text-emerald-700 font-bold hover:underline">Se connecter</a>
+            </p>
+        </div>
+    </div>
+
+    <script type="module" src="src/signup.js"></script>
+</body>
+</html>
