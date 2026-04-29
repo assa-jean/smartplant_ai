@@ -7,7 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 min-h-screen pb-20">
+<body class="bg-gray-50 min-h-screen pb-24 relative overflow-x-hidden">
+    <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-emerald-100/50 to-transparent -z-10"></div>
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute top-40 -left-20 w-48 h-48 bg-green-200/20 rounded-full blur-2xl -z-10"></div>
 
     <div class="p-6 flex justify-between items-center bg-white">
         <h1 class="text-2xl font-bold text-emerald-900">Bonjour, <span id="userName" class="text-emerald-600">...</span>!</h1>
@@ -15,7 +18,7 @@
     </div>
 
     <div class="p-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Mes Cultures à Scanner</h2>
+        <h2 class="text-lg font-extrabold text-emerald-900 tracking-tight">Mes Cultures encours</h2>
         <div class="grid grid-cols-3 gap-4 mb-6">
             <button onclick="selectPlant('Maïs')" class="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-emerald-500 transition">
                 <span class="text-3xl">🌽</span>
@@ -36,31 +39,49 @@
         </button>
     </div>
 
-    <div class="p-6">
-        <h2 class="text-lg font-bold text-gray-800 mb-4">Vos Demandes</h2>
-        <div id="requestContainer" class="bg-white p-5 rounded-3xl shadow-md border border-gray-100">
-            <div id="noRequest">
-                <p class="text-gray-500 text-sm mb-4">Pas de demande en cours. Besoin d'aide pour vos cultures ?</p>
-                <button id="btnLoan" class="w-full bg-emerald-100 text-emerald-800 py-3 rounded-xl font-bold">
-                    Besoin d'une denrée ou intrant ?
-                </button>
-            </div>
-            
-            <div id="activeRequest" class="hidden">
-                <p id="loanTitle" class="font-bold text-sm mb-2">Demande en cours...</p>
-                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                    <div id="progressBar" class="bg-emerald-600 h-2.5 rounded-full" style="width: 30%"></div>
-                </div>
-                <p id="loanStatus" class="text-xs text-gray-400 italic">Statut : En cours d'examen</p>
-            </div>
+    <div class="mt-8">
+        <div class="px-6 flex justify-between items-center mb-4">
+            <h2 class="text-lg font-extrabold text-emerald-900 tracking-tight">Mes Crédits en Cours</h2>
+            <a href="profile.html" class="text-xs font-bold text-emerald-600 hover:underline">Voir plus <i class="fa-solid fa-arrow-right ml-1"></i></a>
         </div>
+
+        <div id="loanSlider" class="flex flex-nowrap overflow-x-auto gap-4 px-6 pb-6 snap-x no-scrollbar">
+            
+            <div class="min-w-[85%] snap-center relative overflow-hidden bg-white rounded-[2rem] p-6 shadow-xl shadow-emerald-900/5 border border-emerald-50/50">
+                <div class="relative flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white">
+                        <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="font-black text-gray-800 text-base leading-tight">Semences Maïs</p>
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Demande #001</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-end">
+                        <span class="text-[11px] font-bold text-emerald-600 italic">Analyse...</span>
+                        <span class="text-sm font-black text-emerald-900">30%</span>
+                    </div>
+                    <div class="w-full h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-emerald-500 rounded-full" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
     </div>
+
+    <style>
+        /* Pour cacher la barre de scroll tout en gardant la fonctionnalité */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 
     <div class="fixed bottom-0 w-full bg-white border-t flex justify-around p-4">
         <button class="text-emerald-700 flex flex-col items-center"><i class="fa-solid fa-house"></i><span class="text-[10px]">Accueil</span></button>
         <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-leaf"></i><span class="text-[10px]">Diagnostic</span></button>
         <a href="loans.html"><button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-hand-holding-dollar"></i><span class="text-[10px]">Micro-Loan</span></button></a>
-        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></button>
+        <a href="profile.html"><button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></button></a>
     </div>
 
     <script type="module" src="src/home.js"></script>
