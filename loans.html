@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPlant AI - Demande de Crédit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen pb-24">
+
+    <div class="p-6 bg-white flex items-center gap-4 shadow-sm">
+        <a href="home.html" class="text-gray-600 text-xl"><i class="fa-solid fa-arrow-left"></i></a>
+        <h1 class="text-xl font-bold text-emerald-900">Micro-Crédit Agricole</h1>
+    </div>
+
+    <div class="p-6">
+        <div class="bg-emerald-700 rounded-3xl p-6 text-white mb-8 shadow-lg">
+            <p class="text-emerald-100 text-sm">Crédit disponible</p>
+            <h2 class="text-3xl font-bold">50 000 FCFA</h2>
+            <p class="text-xs mt-2 opacity-80">*Basé sur vos diagnostics de cultures passés</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 space-y-5">
+            <h3 class="font-bold text-gray-800">Nouvelle demande d'intrants</h3>
+            
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Type de besoin</label>
+                <select id="loanItem" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
+                    <option value="Engrais NPK">Engrais NPK</option>
+                    <option value="Pesticide Bio">Pesticide Bio</option>
+                    <option value="Semences Maïs">Semences Maïs</option>
+                    <option value="Sac de Riz (Denrée)">Sac de Riz (Denrée)</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Quantité souhaitée</label>
+                <input type="text" id="loanQty" placeholder="Ex: 2 sacs, 5 litres..." class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1">
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Justification</label>
+                <textarea id="loanReason" placeholder="Pourquoi avez-vous besoin de cela ?" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 h-24"></textarea>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Région</label>
+                <select id="regionSelect" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
+                    <option value="">Sélectionnez une région</option>
+                    <option value="ADAMAOUA">Adamaoua</option>
+                    <option value="CENTRE">Centre</option>
+                    <option value="EST">Est</option>
+                    <option value="EXTREME-NORD">Extrême-Nord</option>
+                    <option value="LITTORAL">Littoral</option>
+                    <option value="NORD">Nord</option>
+                    <option value="NORD-OUEST">Nord-Ouest</option>
+                    <option value="OUEST">Ouest</option>
+                    <option value="SUD">Sud</option>
+                    <option value="SUD-OUEST">Sud-Ouest</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Ville</label>
+                <select id="citySelect" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
+                    <option value="">Sélectionnez d'abord une région</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Quartier / Localité précise</label>
+                <input type="text" id="neighborhood" placeholder="Ex: Akwa, Bastos, Mimboman..." class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
+            </div>
+
+            <button id="btnSubmitLoan" class="w-full bg-emerald-700 text-white py-4 rounded-2xl font-bold shadow-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane"></i> Soumettre la demande
+            </button>
+        </div>
+    </div>
+
+    <div id="loanStatusModal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-xs w-full flex flex-col items-center text-center">
+            <div id="loanSuccessIcon" class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-check text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-emerald-900 mb-2">Demande envoyée !</h3>
+            <p class="text-gray-500 text-sm">Votre coopérative examine votre dossier. Redirection...</p>
+        </div>
+    </div>
+
+    <div class="fixed bottom-0 w-full bg-white border-t flex justify-around p-4">
+        <a href="home.html" class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-house"></i><span class="text-[10px]">Accueil</span></a>
+        <a href="diagnostic.html" class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-leaf"></i><span class="text-[10px]">Diagnostic</span></a>
+        <button class="text-emerald-700 flex flex-col items-center"><i class="fa-solid fa-hand-holding-dollar"></i><span class="text-[10px]">Micro-Loan</span></button>
+        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></button>
+    </div>
+
+    <script type="module" src="src/loans.js"></script>
+</body>
+</html>
