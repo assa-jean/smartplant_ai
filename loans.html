@@ -40,11 +40,6 @@
             </div>
 
             <div>
-                <label class="text-xs font-bold text-gray-400 uppercase">Justification</label>
-                <textarea id="loanReason" placeholder="Pourquoi avez-vous besoin de cela ?" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 h-24"></textarea>
-            </div>
-
-            <div>
                 <label class="text-xs font-bold text-gray-400 uppercase">Région</label>
                 <select id="regionSelect" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
                     <option value="">Sélectionnez une région</option>
@@ -73,6 +68,11 @@
                 <input type="text" id="neighborhood" placeholder="Ex: Akwa, Bastos, Mimboman..." class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 focus:ring-2 focus:ring-emerald-500">
             </div>
 
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase">Justification</label>
+                <textarea id="loanReason" placeholder="Pourquoi avez-vous besoin de cela ?" class="w-full p-4 bg-gray-50 rounded-xl border-none outline-none mt-1 h-24"></textarea>
+            </div>
+
             <button id="btnSubmitLoan" class="w-full bg-emerald-700 text-white py-4 rounded-2xl font-bold shadow-lg flex items-center justify-center gap-2">
                 <i class="fa-solid fa-paper-plane"></i> Soumettre la demande
             </button>
@@ -92,8 +92,8 @@
     <div class="fixed bottom-0 w-full bg-white border-t flex justify-around p-4">
         <a href="home.html" class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-house"></i><span class="text-[10px]">Accueil</span></a>
         <a href="diagnostic.html" class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-leaf"></i><span class="text-[10px]">Diagnostic</span></a>
-        <button class="text-emerald-700 flex flex-col items-center"><i class="fa-solid fa-hand-holding-dollar"></i><span class="text-[10px]">Micro-Loan</span></button>
-        <button class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></button>
+        <a href="loans.html" class="text-emerald-700 flex flex-col items-center"><i class="fa-solid fa-hand-holding-dollar"></i><span class="text-[10px]">Micro-Loan</span></a>
+        <a href="profile.html" class="text-gray-400 flex flex-col items-center"><i class="fa-solid fa-user"></i><span class="text-[10px]">Profil</span></a>
     </div>
 
     <script type="module" src="src/loans.js"></script>

@@ -8,14 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 min-h-screen pb-24">
+<div class="relative pt-16 pb-12 flex flex-col items-center bg-[#0F172A] overflow-hidden rounded-b-[3.5rem] shadow-2xl">
+    
+    <div class="absolute top-[-20%] left-[-10%] w-72 h-72 bg-blue-600/20 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-emerald-500/10 rounded-full blur-[100px]"></div>
 
-    <div class="p-6 bg-white shadow-sm flex flex-col items-center pt-12">
-        <div class="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 text-3xl font-bold mb-4 border-4 border-white shadow-lg">
-            <span id="userInitial">-</span>
+    <div class="relative mb-6">
+        <div class="relative w-28 h-28 bg-slate-800 rounded-full p-1 shadow-2xl border border-slate-700">
+            <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center border border-slate-700 overflow-hidden">
+                <span id="userInitial" class="text-4xl font-black text-white tracking-tighter italic">N</span>
+            </div>
         </div>
-        <h1 id="profName" class="text-2xl font-bold text-emerald-900">Chargement...</h1>
-        <p class="text-emerald-600 text-sm font-medium">Agriculteur Vérifié</p>
+
+        <div id="statusBadge" class="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-red-500/10 backdrop-blur-md px-3 py-1 rounded-full border border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+            <i id="statusIcon" class="fa-solid fa-circle-xmark text-red-500 text-[10px]"></i>
+            <span id="statusText" class="text-[9px] font-black text-red-400 uppercase tracking-widest">Not Verified</span>
+        </div>
     </div>
+
+    <div class="text-center mt-4">
+        <h1 id="profName" class="text-3xl font-black text-white tracking-tighter lowercase">narcisse</h1>
+        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em] mt-2">SmartPlant Core Id</p>
+    </div>
+</div>
+
 
     <div class="p-6 space-y-4">
 
